@@ -3,7 +3,7 @@ import { LitElement, html, css} from "lit";
 export class SimpleInput extends LitElement {
     static properties = {
         value: {
-            type: String
+            reflect: true
         },
         placeholder: {
             type: String
@@ -28,7 +28,7 @@ export class SimpleInput extends LitElement {
     }
 
     render() {
-        return html `<input id='simple-input' @input=${this.onChange} value=${this.value} placeholder=${this.placeholder} />`
+        return html `<input id='simple-input' @input=${this.onChange} .value=${this.value} placeholder=${this.placeholder}>`
     }
 }
 

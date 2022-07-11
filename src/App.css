@@ -13,6 +13,24 @@
   }
 }
 
+.input-field {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.dog-preview, .dogs-list {
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid orange;
+  padding-bottom: 19px;
+  width: 50%;
+}
+
+.dog-item {
+  margin-top: 15px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
