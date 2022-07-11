@@ -1,5 +1,4 @@
-import { LitElement, css, html } from 'lit';
-import { styleMap } from 'lit/directives/style-map.js';
+import { LitElement, html } from 'lit';
 
 export class SimpleTitle extends LitElement {
     static properties = {
