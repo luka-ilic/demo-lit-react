@@ -11,11 +11,11 @@ function App() {
   const [dogs, setDogs] = useState([]);
 
   const onNameChange = (e) => {
-    setInputValues({ ...{ ...inputValues, dogName: e.detail.value } });
+    setInputValues({ ...inputValues, dogName: e.detail.value });
   }
 
   const onBreedChange = (e) => {
-    setInputValues({ ...{ ...inputValues, breed: e.detail.value } });
+    setInputValues({ ...inputValues, breed: e.detail.value });
   }
 
   const handleAddDog = () => {
@@ -24,7 +24,7 @@ function App() {
   }
 
   const handleRemoveDog = (target) => {
-    setDogs([...dogs.filter((dog, i) => i !== target)]);
+    setDogs(dogs.filter((dog, i) => i !== target));
   };
 
   return (
