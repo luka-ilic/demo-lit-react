@@ -13,7 +13,6 @@ export class SimpleTitle extends LitElement {
   }
 
   render() {
-    console.log(this.color);
     return html`<h1 style=${`color: ${this.color}`}><slot></slot></h1>`;
   }
 }

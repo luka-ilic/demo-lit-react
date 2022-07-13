@@ -20,7 +20,6 @@ export class SimpleInput extends LitElement {
   `;
 
   onChange(e) {
-    console.log(`This is litInput = ${this.value}`);
     this.dispatchEvent(
       new CustomEvent('input-change', {
         detail: {

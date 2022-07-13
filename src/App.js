@@ -25,6 +25,9 @@ function App() {
     setInputValues({ ...inputValues, dogName: e.detail.value });
   };
 
+  const onBreedChange = (e) => {
+    setInputValues({ ...inputValues, breed: e.detail.value });
+  };
   const onVanillaNameChange = (e) => {
     setVanillaInputValues({ ...vanillaInputValues, dogName: e.detail.value });
   };
@@ -33,16 +36,12 @@ function App() {
     setVanillaInputValues({ ...vanillaInputValues, breed: e.detail.value });
   };
 
-  const onBreedChange = (e) => {
-    setInputValues({ ...inputValues, breed: e.detail.value });
-  };
-
   const handleAddDog = () => {
     setDogs([...dogs, { ...inputValues }]);
     setInputValues({ dogName: '', breed: '' });
   };
 
-  const handleVanillaAdd = () => {
+  const handleVanillaAddDog = () => {
     setVanillaDogs([...vanillaDogs, { ...vanillaInputValues }]);
     setVanillaInputValues({ dogName: '', breed: '' });
   };
@@ -51,7 +50,7 @@ function App() {
     setDogs(dogs.filter((dog, i) => i !== target));
   };
 
-  const vanillaHandleRemoveDog = (target) => {
+  const handleVanillaRemoveDog = (target) => {
     setVanillaDogs(vanillaDogs.filter((dog, i) => i !== target));
   };
 
@@ -86,8 +85,6 @@ function App() {
       }
     };
   });
-
-  console.log(vanillaInputValues);
 
   return (
     <div className='App'>
@@ -165,7 +162,7 @@ function App() {
           ></VanillaInput>
         </div>
         <VanillaButton
-          handleClick={handleVanillaAdd}
+          handleClick={handleVanillaAddDog}
           placeHolder='Add'
         ></VanillaButton>
       </div>
@@ -182,10 +179,10 @@ function App() {
         <ol>
           {vanillaDogs.map((dog, i) => (
             <li className='dog-item' key={i}>
-              {<simple-dog-item details={JSON.stringify(dog)} />}{' '}
+              {<VanillaDogItem details={JSON.stringify(dog)} />}{' '}
               <VanillaButton
                 handleClick={() => {
-                  vanillaHandleRemoveDog(i);
+                  handleVanillaRemoveDog(i);
                 }}
                 placeHolder={`Delete ${dog.dogName} - ${dog.breed}`}
               ></VanillaButton>

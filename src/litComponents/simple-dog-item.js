@@ -16,7 +16,6 @@ export class SimpleDogItem extends LitElement {
   }
 
   render() {
-    console.log(this.details);
     return html`<div>
       <strong>Name:</strong> ${this.details.dogName},
       <strong>Breed:</strong> ${this.details.breed}
