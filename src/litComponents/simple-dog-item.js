@@ -1,21 +1,27 @@
-const { LitElement, html } = require("lit");
+const { LitElement, html } = require('lit');
 
 export class SimpleDogItem extends LitElement {
-    static properties = {
-        details: {}
-    }
+  static get properties() {
+    return {
+      details: { type: Object },
+    };
+  }
 
-    constructor() {
-        super();
-        this.details = {
-            dogName: 'Nameless',
-            breed: 'Unknown'
-        }
-    }
+  constructor() {
+    super();
+    this.details = {
+      dogName: '',
+      breed: '',
+    };
+  }
 
-    render() {
-        return html`<div><strong>Name:</strong> ${this.details.dogName}, <strong>Breed:</strong> ${this.details.breed}</div>`;
-    }
-};
+  render() {
+    console.log(this.details);
+    return html`<div>
+      <strong>Name:</strong> ${this.details.dogName},
+      <strong>Breed:</strong> ${this.details.breed}
+    </div>`;
+  }
+}
 
-customElements.define('simple-dog-item', SimpleDogItem)
+customElements.define('simple-dog-item', SimpleDogItem);
