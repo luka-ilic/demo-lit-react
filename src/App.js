@@ -108,16 +108,20 @@ function App() {
         </ol>
       </div>
       <VanillaHeading color="orange" title="Demo using lit" />
-      <VanillaInput
-        placeholder="Name"
-        onChange={onNameChangelr}
-        value={inputValueslr.dogName}
-      ></VanillaInput>
-      <VanillaInput
-        onChange={onBreedChangelr}
-        value={inputValueslr.breed}
-        placeholder="Breed"
-      ></VanillaInput>
+      <div className="input-field">
+        <VanillaInput
+          placeholder="Name"
+          onChange={onNameChangelr}
+          value={inputValueslr.dogName}
+        ></VanillaInput>
+      </div>
+      <div className="input-field">
+        <VanillaInput
+          onChange={onBreedChangelr}
+          value={inputValueslr.breed}
+          placeholder="Breed"
+        ></VanillaInput>
+      </div>
       <VanillaButon onClick={handleAddDoglr} action="Add new friend" />
       <div className="dog-preview">
         <DogPreview title={titlePreview} details={detailsPreviw} />
@@ -128,7 +132,7 @@ function App() {
         <ol>
           {dogslr.map((dog, i) => (
             <li className="dog-item" key={i}>
-              {<VanillaDogItem details={JSON.stringify(dog)} />}{" "}
+              {<VanillaDogItem details={JSON.stringify(dog)} />}
               <VanillaButon
                 onClick={() => {
                   handleRemoveDoglr(i);
