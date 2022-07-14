@@ -135,7 +135,10 @@ function App() {
         <VanillaDogItem details={JSON.stringify(inputValueslr)} />
       </div>
       <div className="dogs-list">
-        <h2>Added Dogs List lit-react</h2>
+        <VanillaHeading
+          color="black"
+          title={<h6>Added Dogs List lit-react</h6>}
+        />
         <ol>
           {dogslr.map((dog, i) => (
             <li className="dog-item" key={i}>
