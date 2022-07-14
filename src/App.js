@@ -27,7 +27,7 @@ function App() {
   const [dogslr, setDogslr] = useState([]);
 
   const titlePreview = "New dog - Preview";
-  const detailsPreviw =
+  const detailsPreview =
     " This section exists purely to demonstrate lit component update on object change";
 
   const onNameChange = (e) => {
@@ -87,7 +87,7 @@ function App() {
       </div>
       <Button onClick={handleAddDog}>Add new friend</Button>
       <div className="dog-preview">
-        <DogPreview title={titlePreview} details={detailsPreviw} />
+        <DogPreview title={titlePreview} details={detailsPreview} />
         <DogItem details={inputValuesll} />
       </div>
       <div className="dogs-list">
@@ -107,7 +107,14 @@ function App() {
           ))}
         </ol>
       </div>
-      <VanillaHeading color="orange" title="Demo using lit" />
+      <VanillaHeading
+        color="orange"
+        title={
+          <p>
+            Demo using <a href="https://lit.dev/">lit</a>
+          </p>
+        }
+      />
       <div className="input-field">
         <VanillaInput
           placeholder="Name"
@@ -124,7 +131,7 @@ function App() {
       </div>
       <VanillaButon onClick={handleAddDoglr} action="Add new friend" />
       <div className="dog-preview">
-        <DogPreview title={titlePreview} details={detailsPreviw} />
+        <DogPreview title={titlePreview} details={detailsPreview} />
         <VanillaDogItem details={JSON.stringify(inputValueslr)} />
       </div>
       <div className="dogs-list">
