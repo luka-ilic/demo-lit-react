@@ -2,26 +2,26 @@ import { useRef, useEffect } from "react";
 import "../litComponents/simple-input";
 
 export const VanillaInput = ({ placeholder, onChange, value }) => {
-  const redButtonRef = useRef();
+  const inputRef = useRef();
 
   useEffect(() => {
-    let redButton = null;
+    let input = null;
 
-    if (redButtonRef.current) {
-      redButtonRef.current.addEventListener("input-change", onChange);
-      redButton = redButtonRef.current;
+    if (inputRef.current) {
+      inputRef.current.addEventListener("input-change", onChange);
+      input = inputRef.current;
     }
 
     return () => {
-      if (redButton) {
-        redButton.removeEventListener("input-change", onChange);
+      if (input) {
+        input.removeEventListener("input-change", onChange);
       }
     };
   });
 
   return (
     <simple-input
-      ref={redButtonRef}
+      ref={inputRef}
       placeholder={placeholder}
       onChange={onChange}
       value={value}
