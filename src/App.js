@@ -91,7 +91,7 @@ function App() {
         <DogItem details={inputValuesll} />
       </div>
       <div className="dogs-list">
-        <h2>Added Dogs List</h2>
+        <VanillaHeading color="black" title={<h6>Added Dogs List</h6>} />
         <ol>
           {dogs.map((dog, i) => (
             <li className="dog-item" key={i}>
