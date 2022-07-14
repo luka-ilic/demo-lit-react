@@ -56,6 +56,8 @@ function App() {
 
   useEffect(() => {
     let breedInput = null;
+    let nameInput = null;
+
     if (breedInputRef.current) {
       breedInputRef.current.addEventListener(
         'input-change',
@@ -63,15 +65,6 @@ function App() {
       );
       breedInput = breedInputRef.current;
     }
-    return () => {
-      if (breedInput) {
-        breedInput.removeEventListener('input-change', onVanillaBreedChange);
-      }
-    };
-  });
-
-  useEffect(() => {
-    let nameInput = null;
     if (nameInputRef.current) {
       nameInputRef.current.addEventListener(
         'input-change',
@@ -80,6 +73,9 @@ function App() {
       nameInput = nameInputRef.current;
     }
     return () => {
+      if (breedInput) {
+        breedInput.removeEventListener('input-change', onVanillaBreedChange);
+      }
       if (nameInput) {
         nameInput.removeEventListener('input-change', onVanillaNameChange);
       }

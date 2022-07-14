@@ -1,14 +1,16 @@
 import { LitElement, html, css } from 'lit';
 
 export class SimpleInput extends LitElement {
-  static properties = {
-    value: {
-      reflect: true,
-    },
-    placeholder: {
-      type: String,
-    },
-  };
+  static get properties() {
+    return {
+      value: {
+        reflect: true,
+      },
+      placeholder: {
+        type: String,
+      },
+    };
+  }
 
   static styles = css`
     input {
