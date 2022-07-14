@@ -1,18 +1,17 @@
-import "./App.css";
+import { useState } from "react";
+
 import { Heading } from "./components/Heading";
 import { Button } from "./components/Button";
-import { useState } from "react";
 import { Input } from "./components/Input";
 import { DogItem } from "./components/DogItem";
-import "./litComponents/simple-btn";
-import "./litComponents/simple-dog-item";
-import "./litComponents/simple-input";
-import "./litComponents/simple-title";
-import { VanillaInput } from "./components/VanillaInput";
-import { VanillaButon } from "./components/VanillaButton";
-import { VanillaDogItem } from "./components/VanillaDogItem";
 import { DogPreview } from "./components/DogPreview";
-import { VanillaHeading } from "./components/VanillaHeading";
+import { VanillaInput } from "./litVanilaWrappers/VanillaInput";
+import { VanillaButon } from "./litVanilaWrappers/VanillaButton";
+import { VanillaDogItem } from "./litVanilaWrappers/VanillaDogItem";
+import { VanillaHeading } from "./litVanilaWrappers/VanillaHeading"
+;
+import "./App.css";
+
 function App() {
   const [inputValuesll, setInputValuesll] = useState({
     dogName: "",
@@ -111,7 +110,7 @@ function App() {
         color="orange"
         title={
           <p>
-            Demo using <a href="https://lit.dev/">lit</a>
+            Demo using pure react + lit(no third party)
           </p>
         }
       />
@@ -129,7 +128,7 @@ function App() {
           placeholder="Breed"
         ></VanillaInput>
       </div>
-      <VanillaButon onClick={handleAddDoglr} name="Add new friend" />
+      <VanillaButon onClick={handleAddDoglr} >Add new friend</VanillaButon>
       <div className="dog-preview">
         <DogPreview title={titlePreview} details={detailsPreview} />
         <VanillaDogItem details={JSON.stringify(inputValueslr)} />
@@ -147,8 +146,7 @@ function App() {
                 onClick={() => {
                   handleRemoveDoglr(i);
                 }}
-                action={`Delete ${dog.dogName} - ${dog.breed}`}
-              />
+              >{`Delete ${dog.dogName} - ${dog.breed}`}</VanillaButon>
             </li>
           ))}
         </ol>
