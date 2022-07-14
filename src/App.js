@@ -129,7 +129,7 @@ function App() {
           placeholder="Breed"
         ></VanillaInput>
       </div>
-      <VanillaButon onClick={handleAddDoglr} action="Add new friend" />
+      <VanillaButon onClick={handleAddDoglr} name="Add new friend" />
       <div className="dog-preview">
         <DogPreview title={titlePreview} details={detailsPreview} />
         <VanillaDogItem details={JSON.stringify(inputValueslr)} />

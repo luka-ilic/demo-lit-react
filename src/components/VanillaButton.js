@@ -1,5 +1,5 @@
 import "../litComponents/simple-btn";
 
-export const VanillaButon = ({ onClick, action }) => {
-  return <simple-btn onClick={onClick}>{action}</simple-btn>;
+export const VanillaButon = ({ onClick, name }) => {
+  return <simple-btn onClick={onClick}>{name}</simple-btn>;
 };
